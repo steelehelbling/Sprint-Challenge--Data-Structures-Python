@@ -37,11 +37,24 @@ class LinkedList:
             current = current.get_next()
 
         return False
-
+        #[a=>b=>c=>d=>h=>j=>l=>n]
+        #a, none
+        #b, a
+        #c, b
+        #d, c
+        #h, d
+        #j, h
+        #l, j
+        #n, l
+        #none, n
+        #[a<=b<=c<=d<=h<=j<=l<=n]
     def reverse_list(self, node, prev):
+        if node != None:
             change = node.get_next()
             node.set_next(prev)
             self.reverse_list(change, node)  
+        else:
+            self.head = prev
 
 classmake = LinkedList()
 classmake.add_to_head(2)
